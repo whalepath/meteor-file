@@ -4,7 +4,7 @@ Package.describe({
 
 Package.on_use(function (api) {
   api.use(["underscore", "ejson"], ["client", "server"]);
-  api.use(["handlebars", "spark"], "client");
+  api.use(["handlebars", "ui"], "client");
   api.add_files(["meteor-file.js"], ["client", "server"]);
   api.add_files("meteor-file-uploader.js", "client");
 
