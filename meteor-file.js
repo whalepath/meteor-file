@@ -34,7 +34,7 @@ MeteorFile.fromJSONValue = function (value) {
     bytesRead: value.bytesRead,
     bytesUploaded: value.bytesUploaded,
     readProgress: value.readProgress,
-    uploadProgress: value.uploadProgress,
+    uploadProgress: value.uploadProgress
   }, value.options);
 };
 
@@ -76,9 +76,8 @@ MeteorFile.prototype = {
       bytesUploaded: this.bytesUploaded,
       _id: this._id,
       readProgress: this.readProgress,
-      uploadProgress: this.uploadProgress,
-      options: this.options
-    });
+      uploadProgress: this.uploadProgress
+    }, this.options);
   },
 
   toJSONValue: function () {
