@@ -35,8 +35,7 @@ MeteorFile.fromJSONValue = function (value) {
     bytesUploaded: value.bytesUploaded,
     readProgress: value.readProgress,
     uploadProgress: value.uploadProgress,
-    options: value.options
-  });
+  }, value.options);
 };
 
 MeteorFile.humanize = function (size) {
