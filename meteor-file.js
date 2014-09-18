@@ -19,6 +19,7 @@ MeteorFile = function (doc, options) {
   this.collection = options.collection;
   this.readProgress = defaultZero(doc.readProgress);
   this.uploadProgress = defaultZero(doc.uploadProgress);
+  this.options = _.omit(options, 'collection');
 };
 
 MeteorFile.fromJSONValue = function (value) {
@@ -33,7 +34,8 @@ MeteorFile.fromJSONValue = function (value) {
     bytesRead: value.bytesRead,
     bytesUploaded: value.bytesUploaded,
     readProgress: value.readProgress,
-    uploadProgress: value.uploadProgress
+    uploadProgress: value.uploadProgress,
+    options: value.options
   });
 };
 
@@ -75,7 +77,8 @@ MeteorFile.prototype = {
       bytesUploaded: this.bytesUploaded,
       _id: this._id,
       readProgress: this.readProgress,
-      uploadProgress: this.uploadProgress
+      uploadProgress: this.uploadProgress,
+      options: this.options
     });
   },
 
@@ -91,7 +94,8 @@ MeteorFile.prototype = {
       bytesRead: this.bytesRead,
       bytesUploaded: this.bytesUploaded,
       readProgress: this.readProgress,
-      uploadProgress: this.uploadProgress
+      uploadProgress: this.uploadProgress,
+      options: this.options
     };
   }
 };
